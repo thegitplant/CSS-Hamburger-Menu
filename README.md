@@ -38,12 +38,11 @@ have a look at master.scss in the SCSS directory and then compile it.
 ### Do I need to credit this?
 → No, the project is licensed under the unlicense.
 
-### Why isn't there a desktop layout?
-→ There is, uncomment `@use "nav_desktop"` in master.scss to enable it, then compile.
-
 ### I can't compile SCSS what should I do?
 → Use the CSS directory with the all the setups \
   then link to one of the stylesheets in there.
 
 ### Why should I use this?
 → It's quick and easy, requires the bare minimum of effort to set up.
+
+Also see master.scss in the scss directory.

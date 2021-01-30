@@ -1,28 +1,26 @@
 @use "../variables";
 
 header {
-  label {
-    //     Hamburger Lines | ☰
-    span,
-    span::before,
-    span::after {
-      content: "";
-      box-sizing: border-box;
-      position: absolute;
-      background-color: variables.$secondary-color;
-      width: 1.25rem;
-      height: 0.125rem;
-    }
-    span {
-      &::before {
-        bottom: 0.45em;
-        transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 150ms;
-      }
+  // Hamburger Lines | ☰
+  label span,
+  span::before,
+  span::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    background-color: variables.$secondary-color;
+    width: 1.25rem;
+    height: 0.125rem;
+  }
+  span {
+    &::before {
+      bottom: 0.45em;
       transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 150ms;
-      &::after {
-        top: 0.45em;
-        transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 150ms;
-      }
+    }
+    transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 150ms;
+    &::after {
+      top: 0.45em;
+      transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 150ms;
     }
   }
   // Hamburger button | Checked

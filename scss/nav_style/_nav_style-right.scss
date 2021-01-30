@@ -1,7 +1,6 @@
 @use "../variables";
 
 header {
-  // White background
   label {
     justify-content: flex-end;
   }
@@ -12,6 +11,7 @@ header {
       margin-left: 100% - variables.$nav-width;
     }
   }
+  // White background
   nav + div {
     background-color: variables.$secondary-color;
     width: variables.$nav-width;

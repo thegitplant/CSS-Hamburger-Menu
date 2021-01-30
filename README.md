@@ -16,6 +16,7 @@
             <li><a href="#">2nd Link</a></li>
             <li><a href="#">3rd Link</a></li>
             <li><a href="#">Nth Link</a></li>
+            <!-- More <a>s inside of <li>s here -->
           </div>
         </ul>
       </nav>
@@ -23,7 +24,9 @@
       <hr>
     </header>
 ```
-3. Compile the SCSS to CSS and link it to your page
+4. Modify the links to your needs, you may add as many links as you like
+5. Modify master.scss in the scss directory to your needs
+5. Compile the SCSS to CSS and link the compiled CSS to your webpages
 
 ### Choosing different styles:
 

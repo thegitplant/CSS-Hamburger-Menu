@@ -16,7 +16,7 @@
             <li><a href="#">2nd Link</a></li>
             <li><a href="#">3rd Link</a></li>
             <li><a href="#">Nth Link</a></li>
-            <!-- More <a>s inside of <li>s here -->
+            <!-- More anchor elements inside of list items here -->
           </div>
         </ul>
       </nav>

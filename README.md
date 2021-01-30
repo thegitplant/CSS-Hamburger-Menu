@@ -2,7 +2,7 @@
 
 1. Clone this repo
 2. Copy the SCSS directory to your project
-3. Add this to the header:
+3. Add this to the webpages:
 ```
     <header>
       <input type="checkbox" id="menu" />

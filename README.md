@@ -20,6 +20,7 @@
         </ul>
       </nav>
       <div></div>
+      <hr>
     </header>
 ```
 3. Compile the SCSS to CSS and link it to your page

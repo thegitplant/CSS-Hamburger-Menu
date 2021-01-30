@@ -38,16 +38,19 @@ header {
         // Hover line effect
         &::after,
         &::before {
-          display: block;
+          display: block !important;
           width: 0%;
-          margin-top: 0.125rem;
           content: "";
           height: 0.125rem;
           box-sizing: border-box;
           background-color: variables.$main-color;
         }
         &::before {
-          display: none;
+          margin: 0 0 0.125rem 0 !important;
+          background-color: variables.$main-color;
+        }
+        &::after {
+          margin-top: 0.125rem;
         }
         &:hover::after {
           width: 100%;
@@ -60,52 +63,13 @@ header {
       }
     }
   }
-}
-
-// Hamburger to nav | Entering !important zone
-@media screen and (min-width: variables.$nav-break) {
-  label {
-    display: none !important;
-  }
-  input:not(checked) ~ nav {
-    max-height: unset !important;
-    transform: scale(1, 1) !important;
-    transition: transform ease-in-out 0s !important;
-    ul {
-      // display: flex;
-      // justify-content: space-between;
-      background-color: variables.$secondary-color;
-      margin: 0 !important;
-      div {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        li a {
-          padding: 0.5em 0.75em !important;
-          opacity: 1 !important;
-          display: inline-block;
-          margin: 0.25em 0.5em;
-          outline: solid 0.125rem variables.$main-color;
-          &::before {
-            display: block !important;
-            margin: -0.25rem 0 0.125rem 0 !important;
-            background-color: variables.$main-color;
-          }
-          &::after {
-            float: inline-end;
-          }
-          &:hover {
-            color: variables.$tertiary-color;
-            &::before {
-              width: 100%;
-              transition: width ease-in-out 250ms;
-            }
-          }
-        }
-      }
-    }
-  }
-  nav + div {
-    display: none;
+  hr {
+    color: variables.$main-color;
+    background-color: variables.$main-color;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    height: 0.25rem;
+    box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
   }
 }

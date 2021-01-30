@@ -1,13 +1,33 @@
 // Use variables
-@use "./variables";
+@use "./variables"; // Change the values used, please do, default is boring
 // Use stylesheets:
-@use "./nav_main";
-@use "./nav_style/nav_style";
-@use "./nav_style/nav_style-left"; // Hamburger menu comes from left
-// @use "./nav_style/nav_style-right"; // Hamburger menu comes from right
+@use "./nav_main"; // Basic styles
+@use "./nav_style/nav_style"; // Default style
+// @use "./nav_style/nav_style-left"; // Hamburger menu comes from left
+@use "./nav_style/nav_style-right"; // Hamburger menu comes from right
 // @use './nav_style/nav_style-top'; // Hamburger menu comes from top | Fade-out animation is not completely smooth
 // @use "./nav_style/nav_style-top-right"; // Ad@d the hamburger button to the right side | Depends on nav_style-top
 @use "./ham_lines/ham_lines"; // Add basic hamburger button style
-@use "./ham_lines/ham_lines-bulk"; // Add bulk style to hamburger button
-@use "./ham_lines/ham_lines-long"; // Make hamburger lines longer | Good with bulk style
-@use "nav_img"; // Add img to the left side of the row navigation
+// @use "./ham_lines/ham_lines-bulk"; // Add bulk style to hamburger button
+// @use "./ham_lines/ham_lines-long"; // Make hamburger lines longer | Good with bulk style
+@use "./nav_desktop"; // Use the default desktop row navigation
+@use "nav_img"; // Add img to the left side of the default row navigation
+
+// Before you start making your own desktop navigation uncomment the following:
+
+// @media screen and (min-width: variables.$nav-break) {
+//   header {
+//     *,
+//     *:hover,
+//     *:active,
+//     *:focus,
+//     *::selection,
+//     *::before,
+//     *::after {
+//       all: unset !important;
+//     }
+//     label {
+//       display: none !important;
+//     }
+//   }
+// }

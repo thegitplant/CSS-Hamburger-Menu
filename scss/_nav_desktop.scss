@@ -1,0 +1,58 @@
+@use "./variables";
+
+// Hamburger to nav | Entering !important zone
+@media screen and (min-width: variables.$nav-break) {
+  header {
+    label {
+      display: none !important;
+    }
+    input:checked ~ nav,
+    input:not(checked) ~ nav {
+      max-height: unset !important;
+      transform: scale(1, 1) !important;
+      ul {
+        background-color: variables.$secondary-color;
+        margin: 0 !important;
+        div {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          li a {
+            padding: 0.25em 0.75em !important;
+            opacity: 1 !important;
+            display: inline-block;
+            margin: 0.25em 0.5em;
+            outline: solid 0.125rem variables.$main-color;
+            &::after {
+              transform: scale(0, 1);
+              transform-origin: right;
+            }
+            &:hover {
+              color: variables.$tertiary-color;
+              &::before {
+                width: 100%;
+                transition: width ease-in-out 250ms;
+              }
+              &::after {
+                transform: scale(1, 1);
+                transition: transform ease-in-out 250ms;
+              }
+            }
+          }
+        }
+      }
+    }
+    nav + div {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$nav-img-break) {
+  header {
+    input:checked ~ nav,
+    input:not(checked) ~ nav ul div {
+      justify-content: flex-end;
+    }
+  }
+}

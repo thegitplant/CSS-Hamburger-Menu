@@ -1,0 +1,29 @@
+@use "../variables";
+
+header {
+  // When Checked
+  input:checked ~ nav {
+    transform: scale(1, 1);
+    transform-origin: 0 top;
+    transition: transform ease-in-out 250ms;
+  }
+  input:not(checked) ~ nav {
+    max-height: 0;
+    transform-origin: 0 top;
+    transform: scale(1, 0);
+    transition: all ease-in-out 250ms;
+    ul {
+      background-color: variables.$secondary-color;
+      transition: all 150ms ease-in-out;
+    }
+  }
+  // White background
+  input:checked + label {
+    background-color: variables.$secondary-color;
+    transition: none;
+  }
+  // TODO: Improve fade-out animation of background
+  label {
+    transition: background-color ease-out 0ms 250ms;
+  }
+}

@@ -1,0 +1,10 @@
+@use "../variables";
+
+header {
+  //   Hamburger button | Not Checked
+  label {
+    z-index: 2;
+    display: flex;
+    position: relative;
+  }
+}

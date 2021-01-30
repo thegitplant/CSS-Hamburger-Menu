@@ -1,0 +1,13 @@
+// Use variables
+@use "./variables";
+// Use stylesheets:
+@use "./nav_main";
+@use "./nav_style/nav_style";
+@use "./nav_style/nav_style-left"; // Hamburger menu comes from left
+// @use "./nav_style/nav_style-right"; // Hamburger menu comes from right
+// @use './nav_style/nav_style-top'; // Hamburger menu comes from top | Fade-out animation is not completely smooth
+// @use "./nav_style/nav_style-top-right"; // Add the hamburger button to the right side | Depends on nav_style-top
+@use "./ham_lines/ham_lines"; // Add basic hamburger button style
+@use "./ham_lines/ham_lines-bulk"; // Add bulk style to hamburger button
+@use "./ham_lines/ham_lines-long"; // Make hamburger lines longer | Good with bulk style
+// @use "nav_img"; // Add img to the left side of the row navigation

@@ -1,0 +1,28 @@
+@use "variables";
+
+header {
+  nav {
+    ul {
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: variables.$nav-img-break) {
+  header {
+    nav {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        img {
+          display: block;
+          width: 100%;
+          max-width: 3.4375rem;
+          padding: 0.5em;
+        }
+      }
+    }
+  }
+}

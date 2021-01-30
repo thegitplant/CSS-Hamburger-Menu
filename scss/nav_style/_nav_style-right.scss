@@ -1,0 +1,28 @@
+@use "../variables";
+
+header {
+  // White background
+  label {
+    justify-content: flex-end;
+  }
+  input:not(checked) ~ nav {
+    transform: scale(0, 1);
+    transform-origin: right;
+    ul {
+      margin-left: 100% - variables.$nav-width;
+    }
+  }
+  nav + div {
+    background-color: variables.$secondary-color;
+    width: variables.$nav-width;
+    position: absolute;
+    margin: -2.5em 0 0 100% - variables.$nav-width;
+    min-height: 100%;
+    transform: scale(0, 1);
+    transform-origin: right;
+    transition: transform ease-in-out 250ms;
+  }
+  input:checked ~ nav + div {
+    transform: scale(1, 1);
+  }
+}

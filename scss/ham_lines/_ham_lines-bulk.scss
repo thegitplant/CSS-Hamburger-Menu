@@ -1,0 +1,13 @@
+@use "../variables";
+
+header {
+  label {
+    //     Hamburger Lines | ☰
+    span,
+    span::before,
+    span::after {
+      height: 0.25rem;
+      border-radius: 2rem;
+    }
+  }
+}

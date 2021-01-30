@@ -1,0 +1,102 @@
+@use "variables";
+
+header {
+  background-color: variables.$tertiary-color;
+  // Input
+  input {
+    display: none;
+  }
+  // Display nav when input is checked
+  input:checked ~ nav {
+    transform: scale(1, 1);
+    ul {
+      div {
+        li {
+          a {
+            opacity: 1;
+            transition: opacity ease-in-out 250ms 250ms;
+          }
+        }
+      }
+    }
+  }
+  //   Hamburger button | Not Checked
+  label {
+    padding: 1.25em;
+  }
+  input:not(checked) ~ nav {
+    //   Nav
+    z-index: 2;
+    position: relative; // To allow setting z-index
+    max-height: 0; // We don't want the nav pushing down main or something after header
+    transition: transform ease-in-out 250ms;
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      div {
+        li {
+          a {
+            display: block;
+            color: variables.$main-color;
+            text-align: center;
+            text-decoration: none;
+            opacity: 0;
+            padding: 1em;
+            // Hover line effect
+            &::after {
+              display: block;
+              width: 0%;
+              margin-top: 0.125rem;
+              content: "";
+              height: 0.125rem;
+              box-sizing: border-box;
+              background-color: variables.$main-color;
+            }
+            &:hover {
+              &::after {
+                width: 100%;
+                transition: width ease-in-out 250ms;
+              }
+            }
+            &::selection {
+              color: variables.$tertiary-color;
+              background: variables.$main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Hamburger to nav | Entering !important zone
+@media screen and (min-width: variables.$nav-break) {
+  label {
+    display: none !important;
+  }
+  input:not(checked) ~ nav {
+    max-height: unset !important;
+    transform: scale(1, 1) !important;
+    transition: transform ease-in-out 0s !important;
+    ul {
+      // display: flex;
+      // justify-content: space-between;
+      background-color: variables.$secondary-color;
+      margin-left: 0 !important;
+      div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li {
+          a {
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+  }
+  nav + div {
+    display: none;
+  }
+}

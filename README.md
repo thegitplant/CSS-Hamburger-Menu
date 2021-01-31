@@ -30,19 +30,21 @@
 
 ### Choosing different styles:
 
-You can change the look of the menu easily,
-have a look at master.scss in the SCSS directory and then compile it.
+You can change the look of the menu easily, \
+ have a look at master.scss in the SCSS directory and then compile it.
 
-## FAQ:
+### Default and custom desktop layout:
 
-### Do I need to credit this?
-→ No, the project is licensed under the unlicense.
+To disable the default desktop layout comment this from master.scss and then compile:
+
+    @use "./nav_desktop";
 
 ### I can't compile SCSS what should I do?
 → Use the CSS directory with the all the setups \
   then link to one of the stylesheets in there.
 
 ### Why should I use this?
+
 → It's quick and easy, requires the bare minimum of effort to set up.
 
 Also see master.scss in the scss directory.

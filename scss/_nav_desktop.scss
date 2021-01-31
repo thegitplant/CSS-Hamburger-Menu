@@ -17,11 +17,15 @@
           display: flex;
           justify-content: space-around;
           align-items: center;
+          :first-child {
+            padding-top: unset;
+            margin-top: unset;
+          }
           li a {
             padding: 0.25em 0.75em !important;
             opacity: 1 !important;
             display: inline-block;
-            margin: 0.25em 0.5em;
+            margin: 0.25em 0.5em !important;
             outline: solid 0.125rem variables.$main-color;
             &::after {
               transform: scale(0, 1);
@@ -42,16 +46,24 @@
         }
       }
     }
-    nav + div {
+    nav ~ div {
       display: none;
+    }
+    nav ul div {
+      max-width: unset !important;
+    }
+    hr {
+      border: 0 !important;
     }
   }
 }
 
 @media screen and (min-width: variables.$nav-img-break) {
   header {
-    input:checked ~ nav,
+    // Push Items to the end
+    input:checked ~ nav ul div,
     input:not(checked) ~ nav ul div {
+      margin-left: auto;
       justify-content: flex-end;
     }
   }

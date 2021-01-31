@@ -19,6 +19,7 @@ header {
     padding: 1.25em;
   }
   input:not(checked) ~ nav {
+    // TODO: Make hamburger menu stick to top of the page
     //   Nav
     z-index: 2;
     position: relative; // To allow setting z-index
@@ -28,41 +29,52 @@ header {
       padding: 0;
       margin: 0;
       list-style: none;
-      div li a {
-        display: block;
-        color: variables.$main-color;
-        text-align: center;
-        text-decoration: none;
-        opacity: 0;
-        padding: 1em;
-        // Hover line effect
-        &::after,
-        &::before {
-          display: block !important;
-          width: 0%;
-          content: "";
-          height: 0.125rem;
-          box-sizing: border-box;
-          background-color: variables.$main-color;
-        }
-        &::before {
-          margin: 0 0 0.125rem 0 !important;
-          background-color: variables.$main-color;
-        }
-        &::after {
-          margin-top: 0.125rem;
-        }
-        &:hover::after {
-          width: 100%;
-          transition: width ease-in-out 250ms;
-        }
-        &::selection {
-          color: variables.$tertiary-color;
-          background: variables.$main-color;
+      div {
+        min-width: variables.$min-width;
+        max-width: variables.$max-width;
+        li a {
+          // Link
+          display: block;
+          color: variables.$main-color;
+          text-align: center;
+          text-decoration: none;
+          opacity: 0;
+          padding: 1em;
+          // Hover line effect
+          &::after,
+          &::before {
+            display: block !important;
+            width: 0%;
+            content: "";
+            height: 0.125rem;
+            box-sizing: border-box;
+            background-color: variables.$main-color;
+          }
+          &::before {
+            margin: 0 0 0.125rem 0 !important;
+            background-color: variables.$main-color;
+          }
+          &::after {
+            margin-top: 0.125rem;
+          }
+          &:hover::after {
+            width: 100%;
+            transition: width ease-in-out 250ms;
+          }
+          &::selection {
+            color: variables.$tertiary-color;
+            background: variables.$main-color;
+          }
         }
       }
     }
+    & + div {
+      // White Background
+      min-width: variables.$min-width;
+      max-width: variables.$max-width;
+    }
   }
+  // Line Below Hamburger button
   hr {
     color: variables.$main-color;
     background-color: variables.$main-color;

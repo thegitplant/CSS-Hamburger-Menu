@@ -1,10 +1,12 @@
 // Colors:
 $main-color: #6c64e2;
-$secondary-color:  #fff;
+$secondary-color: #fff;
 $tertiary-color: #282828;
 
 // Values
-$nav-width: 45%; // Size of the hamburger menu | In percentage
+$nav-width: 40%; // Size of the hamburger menu | In percentage or REM
+$min-width: 10rem; // Minimum width of hamburger menu
+$max-width: 10rem; // Maximum width of hamburger menu
 $nav-break: 400px; // @media for when to transform hamburger menu to row navigation
 // For _nav_img.scss
 $nav-img-break: 520px; // @media used for moving the nav to the right side

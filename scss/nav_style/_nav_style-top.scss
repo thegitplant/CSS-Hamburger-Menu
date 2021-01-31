@@ -12,18 +12,36 @@ header {
     transform-origin: 0 top;
     transform: scale(1, 0);
     transition: all ease-in-out 250ms;
+    z-index: 1;
     ul {
       background-color: variables.$secondary-color;
       transition: all 150ms ease-in-out;
+      margin: 0 auto;
+      div {
+        min-width: 100%;
+        :first-child {
+          padding-top: 2.5rem;
+          margin-top: -2.5rem;
+        }
+      }
     }
   }
-  // White background
-  input:checked + label {
-    background-color: variables.$secondary-color;
-    transition: none;
+  // Add background when unchecked
+  hr {
+    border-top: solid 2.5rem variables.$tertiary-color;
   }
-  // TODO: Improve fade-out animation of background
   label {
-    transition: background-color ease-out 0ms 250ms;
+    z-index: 2;
+  }
+  // Hamburger button animation | X
+  input:checked + label {
+    span {
+      &::before {
+        transform: rotate(-45deg) !important;
+      }
+      &::after {
+        transform: rotate(45deg) !important;
+      }
+    }
   }
 }

@@ -7,21 +7,26 @@ header {
   input:not(checked) ~ nav {
     transform: scale(0, 1);
     transform-origin: right;
-    ul {
-      margin-left: 100% - variables.$nav-width;
+    & + div,
+    ul div {
+      width: variables.$min-width;
+      position: absolute;
+      right: 0;
+    }
+    // TODO: Maybe join shared styles with nav_style-left and create a nav_style-sides stylesheet
+    // White background
+    & + div {
+      min-height: 100%;
+      width: variables.$nav-width;
+      background-color: variables.$secondary-color;
+      position: fixed;
+      margin: -2.5em 0 0 100% - variables.$nav-width;
+      transform: scale(0, 1);
+      transform-origin: right;
+      transition: transform ease-in-out 250ms;
     }
   }
-  // White background
-  nav + div {
-    background-color: variables.$secondary-color;
-    width: variables.$nav-width;
-    position: absolute;
-    margin: -2.5em 0 0 100% - variables.$nav-width;
-    min-height: 100%;
-    transform: scale(0, 1);
-    transform-origin: right;
-    transition: transform ease-in-out 250ms;
-  }
+  // Reveal background from right
   input:checked ~ nav + div {
     transform: scale(1, 1);
   }

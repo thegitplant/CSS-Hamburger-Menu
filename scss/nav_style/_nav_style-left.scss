@@ -1,28 +1,26 @@
 @use "../variables";
 
 header {
+  // Hamburger button
   label {
     justify-content: flex-start;
   }
   input:not(checked) ~ nav {
     transform: scale(0, 1);
     transform-origin: left;
-    ul {
-      margin-right: 100% - variables.$nav-width;
+    // White background
+    & + div {
+      min-height: 100%;
+      width: variables.$nav-width;
+      background-color: variables.$secondary-color;
+      position: fixed;
+      margin-top: -2.5em;
+      transform: scale(0, 1);
+      transform-origin: left;
+      transition: transform ease-in-out 250ms;
     }
   }
-  // White background
-  nav + div {
-    z-index: 1;
-    background-color: variables.$secondary-color;
-    width: variables.$nav-width;
-    position: absolute;
-    margin-top: -2.5em;
-    min-height: 100%;
-    transform: scale(0, 1);
-    transform-origin: left;
-    transition: transform ease-in-out 250ms;
-  }
+  // Reveal background from left
   input:checked ~ nav + div {
     transform: scale(1, 1);
   }

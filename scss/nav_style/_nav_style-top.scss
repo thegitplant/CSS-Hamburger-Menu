@@ -3,32 +3,46 @@
 header {
   // When Checked
   input:checked ~ nav {
-    transform: scale(1, 1);
+    transform: scaleY(1);
     transform-origin: 0 top;
     transition: transform ease-in-out 250ms;
   }
   input:not(checked) ~ nav {
     max-height: 0;
+    top: 0;
+    position: fixed;
     transform-origin: 0 top;
-    transform: scale(1, 0);
+    transform: scaleY(0);
     transition: all ease-in-out 250ms;
     z-index: 1;
     ul {
+      // top: -2.5rem;
+      position: fixed;
       background-color: variables.$secondary-color;
       transition: all 150ms ease-in-out;
       margin: 0 auto;
+      min-width: 100vw;
       div {
-        min-width: 100%;
-        :first-child {
-          padding-top: 2.5rem;
-          margin-top: -2.5rem;
+        min-width: 100vw;
+        max-height: calc(50vh - 2.5rem);
+        // Scrolling when list is too big to fit on height
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        // Custom scrollbar
+        &::-webkit-scrollbar {
+          background-color: variables.$secondary-color;
+          width: 0.375rem;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: variables.$main-color;
+        }
+        scrollbar-width: thin;
+        scrollbar-color: variables.$main-color transparent;
+        &:first-child {
+          margin-top: 2.5rem;
         }
       }
     }
-  }
-  // Add background when unchecked
-  hr {
-    border-top: solid 2.5rem variables.$tertiary-color;
   }
   label {
     z-index: 2;
@@ -37,10 +51,12 @@ header {
   input:checked + label {
     span {
       &::before {
-        transform: rotate(-45deg) !important;
+        transform: rotate(45deg) !important;
+        bottom: 0 !important;
       }
       &::after {
-        transform: rotate(45deg) !important;
+        transform: rotate(-45deg) !important;
+        top: 0 !important;
       }
     }
   }

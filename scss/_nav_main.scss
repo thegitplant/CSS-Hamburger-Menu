@@ -8,7 +8,7 @@ header {
   }
   // Display nav when input is checked
   input:checked ~ nav {
-    transform: scale(1, 1);
+    transform: scaleX(1);
     ul div li a {
       opacity: 1;
       transition: opacity ease-in-out 250ms 250ms;
@@ -19,7 +19,6 @@ header {
     padding: 1.25em;
   }
   input:not(checked) ~ nav {
-    // TODO: Make hamburger menu stick to top of the page
     //   Nav
     z-index: 2;
     position: relative; // To allow setting z-index
@@ -44,22 +43,27 @@ header {
           &::after,
           &::before {
             display: block !important;
-            width: 0%;
             content: "";
             height: 0.125rem;
             box-sizing: border-box;
             background-color: variables.$main-color;
           }
           &::before {
+            width: 0%;
             margin: 0 0 0.125rem 0 !important;
             background-color: variables.$main-color;
           }
           &::after {
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: center;
             margin-top: 0.125rem;
           }
-          &:hover::after {
-            width: 100%;
-            transition: width ease-in-out 250ms;
+          &:hover::after,
+          &:focus::after,
+          &:active::after {
+            transform: scaleX(1);
+            transition: transform ease-in-out 250ms;
           }
           &::selection {
             color: variables.$tertiary-color;
@@ -80,7 +84,11 @@ header {
     background-color: variables.$main-color;
     padding: 0;
     margin: 0;
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
     border: 0;
+    border-top: solid 2.5rem variables.$tertiary-color;
     height: 0.25rem;
     box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
   }

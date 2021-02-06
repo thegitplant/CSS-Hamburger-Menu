@@ -1,17 +1,16 @@
 header {
   label {
+    right: 0;
     justify-content: flex-end;
   }
   // Hamburger button animation | X
   input:checked + label {
     span {
       &::before {
-        transform: rotate(45deg) !important;
-        bottom: 0 !important;
+        transform: rotate(-45deg) !important;
       }
       &::after {
-        transform: rotate(-45deg) !important;
-        top: 0 !important;
+        transform: rotate(45deg) !important;
       }
     }
   }

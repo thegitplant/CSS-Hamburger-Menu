@@ -12,17 +12,17 @@ header {
       content: "";
       box-sizing: border-box;
       background-color: variables.$secondary-color;
-      transition: all ease-in-out 150ms;
+      transition: all ease-in-out 200ms;
     }
     span {
       top: 0;
-      bottom: 0 !important;
+      bottom: 0;
       margin: auto 0;
       &::before {
-        top: 0.45em;
+        bottom: 0.5em;
       }
       &::after {
-        bottom: 0.45em;
+        top: 0.5em;
       }
     }
   }
@@ -36,13 +36,11 @@ header {
     }
     span {
       &::before {
-        top: 0;
-        transform: rotate(45deg);
+        bottom: 0;
       }
       background-color: transparent;
       &::after {
-        bottom: 0;
-        transform: rotate(135deg);
+        top: 0;
       }
     }
   }

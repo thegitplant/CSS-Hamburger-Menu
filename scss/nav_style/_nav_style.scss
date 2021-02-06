@@ -3,8 +3,9 @@
 header {
   //   Hamburger button | Not Checked
   label {
-    z-index: 2;
+    z-index: 3;
     display: flex;
-    position: relative;
+    position: fixed;
+    width: 100vw;
   }
 }

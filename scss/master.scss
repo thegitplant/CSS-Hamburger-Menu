@@ -5,13 +5,14 @@
 // Use stylesheets:
 @use "./nav_main"; // Basic styles
 @use "./nav_style/nav_style"; // Default style
-@use "./nav_style/nav_style-left"; // Hamburger menu comes from left
+// @use "./nav_style/nav_style-sides"; // Styles for left and right hamburger menus
+// @use "./nav_style/nav_style-left"; // Hamburger menu comes from left
 // @use "./nav_style/nav_style-right"; // Hamburger menu comes from right
-// @use "./nav_style/nav_style-top"; // Hamburger menu comes from top
+@use "./nav_style/nav_style-top"; // Hamburger menu comes from top
 // @use "./nav_style/nav_style-top-right"; // Add the hamburger button to the right side | Depends on nav_style-top
 @use "./ham_lines/ham_lines"; // Add basic hamburger button style
 @use "./ham_lines/ham_lines-heavy"; // Add heavy style to hamburger button
 @use "./ham_lines/ham_lines-long"; // Make hamburger lines longer | Good with the heavy style
-@use "./nav_desktop"; // Use the default desktop row navigation
+// @use "./nav_desktop"; // Use the default desktop row navigation
 // @use "./nav_img"; // Add img to the left side of the default row navigation
 // @use "./nav_custom" // Uncomment and modify this to make your own desktop navigation

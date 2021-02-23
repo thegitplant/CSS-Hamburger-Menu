@@ -5,7 +5,6 @@
 // Use stylesheets:
 @use "./nav_main"; // Basic styles
 
-@use "./nav_style/nav_style-sides"; // Styles for left and right hamburger menus
 @use "./nav_style/nav_style-left"; // Hamburger menu comes from left
 @use "./nav_style/nav_style-right"; // Hamburger menu comes from right
 // @use "./nav_style/nav_style-top"; // Hamburger menu comes from top
@@ -20,3 +19,7 @@
 // @use "./nav_desktop"; // Use the default desktop row navigation
 // @use "./nav_img"; // Add img to the left side of the default row navigation
 // @use "./nav_custom" // Uncomment and modify this file to make your own desktop navigation
+
+// Other stylesheets:
+
+// ./nav_style/nav_style-sides // Styles for left and right hamburger menus

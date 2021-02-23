@@ -1,14 +1,26 @@
-// Colors:
-$main-color: #6c64e2;
+// Colors
+$main-color: #6477e2;
 $secondary-color: #fff;
 $tertiary-color: #282828;
 
-$ham-background: $secondary-color; // Hamburger menu background color
+// Hamburger menu background color
+$nav-background: $secondary-color;
+
+// Hamburger menu scrollbar colors
+$scroll-color: $main-color; // Scrollbar thumb/button/grab thingy
+$scroll-background: transparent; // Scrollbar background
+
+// Hamburger (box)shadow
+$shadow-color: $tertiary-color;
 
 // Values
-$nav-width: 40%; // Size of the hamburger menu | In percentage or REM
-$min-width: 10rem; // Minimum width of hamburger menu
-$max-width: 10rem; // Maximum width of hamburger menu
+$nav-font-weight: 500; // Link font weight
+$nav-font-size: 1.125rem; // Link font size, use the REM unit
+$nav-size: 50vw; // Size of the hamburger menu | Instead of % use the VW or VH units
+$nav-max-size: 16rem; // Maximum size of the hamburger menu
+
+// For _ham_desktop.scss and _nav_desktop.scss
 $nav-break: 400px; // @media for when to transform hamburger menu to row navigation
+
 // For _nav_img.scss
 $nav-img-break: 520px; // @media used for moving the nav to the right side

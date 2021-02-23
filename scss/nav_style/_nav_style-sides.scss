@@ -1,50 +1,39 @@
 @use "../variables";
 
-header {
-  input:not(checked) ~ nav {
-    // Stick nav to top of screen
-    position: fixed !important;
-    top: 0;
-    transform: scale(0, 1);
-    label {
-      top: 0 !important;
-      position: sticky !important;
-    }
-    ul {
-      top: 2.5rem;
-      position: fixed;
-      div {
-        position: fixed;
-        height: calc(100vh - 2.5rem); // Height
-        // Scrolling when list is too big to fit on height
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        width: variables.$nav-width;
-        // Custom scrollbar
-        &::-webkit-scrollbar {
-          background-color: variables.$secondary-color;
-          width: 0.375rem;
-        }
-        &::-webkit-scrollbar-thumb {
-          background-color: variables.$main-color;
-        }
-        scrollbar-width: thin;
-        scrollbar-color: variables.$main-color transparent;
+// Stick nav to top of screen
+input ~ nav {
+  position: fixed;
+  transform: scaleX(0); // Make scrollbar disappear
+
+  ul {
+    top: 2.75rem; // 2.75 = 2.5 for label + 0.25 for hr
+    position: fixed;
+
+    div {
+      // Direction is used for scrollbar of nav items
+      // Visual scrollbar bug (overlap of 2 sidebars → div + body), occurs by default
+      direction: rtl;
+      // The list is pushed down by the header, to compensate we increase the size of the list so that it appears "normal", we do that by using margin-bottom with the size of the header + the size of the outline
+      & li:last-child {
+        margin-bottom: 2.75rem + variables.$nav-font-size / 8;
       }
     }
-    // Background
-    & + div {
-      height: 100vh;
-      width: variables.$nav-width;
-      background-color: variables.$ham-background;
-      position: fixed;
-      top: 2.5rem;
-      transform: scaleX(1);
-      transition: transform ease-in-out 250ms;
-    }
   }
-  // Reveal hamburger menu on check
-  input:checked ~ nav + div {
-    transform: scale(1, 1);
+
+  // Background
+  & + div {
+    top: 2.5rem;
+    width: variables.$nav-size;
+    max-width: variables.$nav-max-size;
+    height: 100vh;
+    position: fixed;
+    transform: scaleX(0);
+    background-color: variables.$nav-background;
+    transition: transform ease-in-out 250ms;
   }
+}
+
+// Reveal hamburger menu on check
+input:checked ~ nav + div {
+  transform: scaleX(1);
 }

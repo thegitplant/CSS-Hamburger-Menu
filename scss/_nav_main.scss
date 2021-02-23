@@ -1,95 +1,127 @@
 @use "variables";
-
 header {
+  height: 2.5rem;
   background-color: variables.$tertiary-color;
-  // Input
-  input {
-    display: none;
+
+  // Horizontal Line Below Hamburger button
+  border-bottom: solid 0.25rem variables.$main-color;
+  box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
+}
+
+// Input
+input {
+  display: none;
+}
+
+// Display nav when input is checked
+input:checked ~ nav {
+  transform: scaleX(1);
+
+  ul div li a {
+    opacity: 1;
+    transition: opacity ease-in-out 250ms 250ms;
   }
-  // Display nav when input is checked
-  input:checked ~ nav {
-    transform: scaleX(1);
-    ul div li a {
-      opacity: 1;
-      transition: opacity ease-in-out 250ms 250ms;
-    }
-  }
-  //   Hamburger button | Not Checked
-  label {
-    padding: 1.25em;
-  }
-  input:not(checked) ~ nav {
-    //   Nav
-    z-index: 2;
-    position: relative; // To allow setting z-index
-    max-height: 0; // We don't want the nav pushing down main or something after header
-    transition: transform ease-in-out 250ms;
-    ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      div {
-        min-width: variables.$min-width;
-        max-width: variables.$max-width;
-        li a {
-          // Link
+}
+
+//   Hamburger button | Not Checked
+label {
+  display: block;
+  padding: 1.25em;
+  width: 100vw;
+  z-index: 3;
+  position: fixed;
+}
+
+input ~ nav {
+  //   Nav
+  max-height: 0; // We don't want the nav pushing down main or something after header
+  z-index: 2;
+  position: relative; // To allow setting z-index
+  transition: transform ease-in-out 250ms;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    div {
+      width: variables.$nav-size;
+      max-width: variables.$nav-max-size;
+      position: fixed;
+      height: 100vh; // Height
+
+      // Scrolling when list is too big to fit on height
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      width: variables.$nav-size;
+
+      // Custom scrollbar
+      // Webkit
+      &::-webkit-scrollbar {
+        background-color: variables.$scroll-background;
+        width: 0.375rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: variables.$scroll-color;
+        border-radius: 20rem;
+      }
+      // Firefox
+      scrollbar-width: thin;
+      scrollbar-color: variables.$scroll-color transparent;
+
+      // IE
+      -ms-scrollbar-base-color: variables.$main-color;
+      -ms-scrollbar-arrow-color: variables.$main-color;
+      -ms-scrollbar-track-color: variables.$secondary-color;
+
+      li a {
+        // Link
+        display: block;
+        padding: 1em 0.5em;
+        font-weight: variables.$nav-font-weight;
+        font-size: variables.$nav-font-size;
+        color: variables.$main-color;
+        opacity: 0;
+        text-align: center;
+        text-decoration: none;
+
+        // Hover line basic styles
+
+        &::after {
           display: block;
-          color: variables.$main-color;
-          text-align: center;
-          text-decoration: none;
-          opacity: 0;
-          padding: 1em;
-          // Hover line effect
-          &::after,
-          &::before {
-            display: block !important;
-            content: "";
-            height: 0.125rem;
-            box-sizing: border-box;
-            background-color: variables.$main-color;
-          }
-          &::before {
-            width: 0%;
-            margin: 0 0 0.125rem 0 !important;
-            background-color: variables.$main-color;
-          }
-          &::after {
-            width: 100%;
-            transform: scaleX(0);
-            transform-origin: center;
-            margin-top: 0.125rem;
-          }
-          &:hover::after,
-          &:focus::after,
-          &:active::after {
-            transform: scaleX(1);
-            transition: transform ease-in-out 250ms;
-          }
-          &::selection {
-            color: variables.$tertiary-color;
-            background: variables.$main-color;
-          }
+          width: 100%;
+          height: variables.$nav-font-size / 8;
+          transform: scaleX(0);
+          content: "";
+          box-sizing: border-box;
+          margin-top: variables.$nav-font-size / 4;
+          background-color: variables.$main-color;
+        }
+
+        &:hover::after,
+        &:focus::after,
+        &:active::after {
+          transform: scaleX(1);
+          transition: transform ease-in-out 250ms;
+        }
+
+        &:focus {
+          outline-offset: -0.25rem; // For the browsers that support it
+          outline: dashed variables.$main-color variables.$nav-font-size / 8;
+          // TODO: Somehow use border instead of outline while maintaining the same look for better compatibility (i.e. IE - outline-offset)
+        }
+
+        &::selection {
+          color: variables.$tertiary-color;
+          background-color: variables.$main-color;
         }
       }
     }
-    & + div {
-      // White Background
-      min-width: variables.$min-width;
-      max-width: variables.$max-width;
-    }
   }
-  // Line Below Hamburger button
-  hr {
-    color: variables.$main-color;
-    background-color: variables.$main-color;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    z-index: -1;
-    width: 100vw;
-    border: 0;
-    border-top: solid 2.5rem variables.$tertiary-color;
-    height: 0.25rem;
-    box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
+
+  & + div {
+    // White Background
+    width: variables.$nav-size;
   }
 }

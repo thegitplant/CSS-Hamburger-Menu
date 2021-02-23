@@ -1,42 +1,48 @@
 @use "../variables";
 
-header {
-  // Hamburger animation rotation
-  label {
+// Rotate Hamburger Lines
+label {
+  right: 0;
+
+  span {
     right: 0;
-    justify-content: flex-end;
-    span {
-      &::before {
-        transform: rotate(180deg) !important;
-      }
-      &::after {
-        transform: rotate(180deg) !important;
-      }
+    margin: 0 1.25em;
+
+    &::before {
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      transform: rotate(180deg);
     }
   }
-  input:checked + label {
-    span {
-      &::before {
-        transform: rotate(-135deg) !important;
-      }
-      &::after {
-        transform: rotate(-45deg) !important;
-      }
+}
+
+// Checked Hamburger button | X
+input:checked + label {
+  span {
+    &::before {
+      transform: rotate(-135deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
     }
   }
-  input:not(checked) ~ nav {
+}
+input ~ nav {
+  right: 0;
+  transform-origin: right;
+
+  ul div {
+    right: 0;
+  }
+
+  // White background
+  & + div {
     right: 0;
     transform-origin: right;
-    ul div {
-      // Visual scrollbar bug (overlap)
-      direction: ltr;
-      right: 0;
-    }
-    // White background
-    & + div {
-      margin: -2.5em 0 0 100% - variables.$nav-width;
-      transform-origin: right;
-      right: 0;
-    }
+    margin: -2.5em 0 0 auto;
+    box-shadow: -0.125rem 0 0.125rem 0 variables.$shadow-color;
   }
 }

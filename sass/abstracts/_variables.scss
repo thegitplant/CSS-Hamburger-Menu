@@ -1,0 +1,45 @@
+// =================
+// Table Of Contents
+// =================
+//
+// #Colors
+// #Typography
+//  '- ##Font Size
+//  '- ##Font Weight
+// #Hamburger Menu Size
+// #Hamburger Menu Maximum Size
+// #Desktop Layout
+//  '- ##Desktop Layout Break
+//  '- ##Desktop Layout With Image Break
+
+// Change:
+
+// #Colors
+$main-color: hsl(230, 70%, 60%);
+$secondary-color: #fff;
+$tertiary-color: hsl(0, 0%, 20%);
+
+// #Typography
+
+// ##Font Size
+$font-size: 1.15rem;
+
+// ##Font Weight
+$font-weight: 500;
+
+// #Hamburger Menu Size
+// Any Unit, use `vh` instead of `%` when using Top Style in master.scss
+$size: 20rem;
+
+// #Hamburger Menu Maximum Size
+$max-size: 15rem;
+
+// #Desktop Layout
+
+// ##Desktop Layout Break
+// @media | Transformation Of Hamburger Menu To Row Navigation
+$break: 640px;
+
+// ##Desktop Layout  With Image Break
+// @media | Add Image To The Right Side And Move The Row Navigation To The Right
+$img-break: 800px;

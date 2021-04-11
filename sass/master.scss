@@ -1,0 +1,65 @@
+@charset 'utf-8';
+
+// =================
+// Table Of Contents
+// =================
+
+// - #Variables
+// - #Navigation Styles
+//    '- ##Left Style
+//    '- ##Right Style
+//    '- ##Top Style
+//    '- ##Top Right Style
+// - #Hover Line Styles
+//    '- ##Center-Sides
+//    '- ##Left-Right
+//    '- ##Right-Left
+// - #Desktop Layout
+//    '- ##Desktop Layout With Image
+
+// #Variables
+//  To change something (i.e. colors) have a look at this file
+@use "./abstracts/variables";
+
+// Uncomment/Comment to Disable/Enable the styles
+// Comments begin with '//', remove it to uncomment a comment
+
+// #Navigation Styles
+
+// ##Left Style | Hamburger Menu Comes From Left
+// @use "./modules/hamburger/left";
+
+// ##Right Style | Hamburger Menu Comes From Right
+// @use "./modules/hamburger/right";
+
+// ##Top Style | Hamburger Menu Comes From The Top
+// @use "./modules/hamburger/top";
+
+// ##Top Right Style | Same As Top Style But Moves The Hamburger Button To The Right
+@use "./modules/hamburger/top-right";
+
+// #Hover Line Styles
+// Use just one!
+
+// ##Center-Sides
+//   The Hover Line Starts From The Middle And Expands Towards The Sides
+@use "./modules/hover/center-sides";
+
+// ##Left-Right
+//   The Hover Line Starts From The Left And Expands To The Right
+//@use "./modules/hover/left-right";
+
+// ##Right-Left
+//   The Hover Line Starts From The Right nd Expands To The Left
+//@use "./modules/hover/right-left";
+
+// #Desktop Layout
+// Uncomment to use
+//   Default Desktop Layout
+@use "./abstracts/responsive";
+
+// #Desktop Layout With Image
+// Uncomment and comment Desktop Layout to use
+//   Default layout with support for an image on the left side,
+//   the navigation links will be moved to the right side
+// @use "./abstracts/responsive-img";

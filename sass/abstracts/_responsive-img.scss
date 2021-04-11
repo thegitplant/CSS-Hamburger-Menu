@@ -1,0 +1,38 @@
+@use "./variables";
+@use "./responsive";
+
+// =================
+// Table Of Contents
+// =================
+//
+// #Hide Image
+//
+// .nav-menu
+//  '- #Image
+//  '- #Unordered List
+
+@media screen and (max-width: variables.$img-break) {
+  // #Hide Image
+  .nav-menu img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: variables.$img-break) {
+  .nav-menu {
+    // #Image
+    img {
+      display: block;
+      position: fixed;
+      z-index: 21;
+      margin: auto;
+      padding: 0.375rem;
+      height: 2rem;
+    }
+
+    // #Unordered List
+    ul {
+      justify-content: flex-end;
+    }
+  }
+}

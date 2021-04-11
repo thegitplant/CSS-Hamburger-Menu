@@ -1,0 +1,167 @@
+@use "../abstracts/variables";
+
+// =================
+// Table Of Contents
+// =================
+//
+// - #Typography
+//
+// .nav-menu
+//  '- #Input
+//  '- #Checked Input
+//  '- #Menu Button
+//  '- #Menu Button Checked Input
+//  '- #Hamburger Lines
+//  '- #Hamburger Lines Checked Input
+//  '- #Nav
+//      '- ##Nav Link
+//  '- #Unordered List
+//      '- ## Custom Scrollbar
+
+// #Typography
+@use "../base/typography";
+
+.nav-menu {
+  // #Input
+  input {
+    display: none;
+  }
+
+  // #Checked Input
+  input:checked ~ nav ul {
+    transform: scaleX(1);
+
+    img {
+      display: none;
+    }
+
+    a {
+      opacity: 1;
+      transition: opacity ease-in-out 250ms 250ms;
+    }
+  }
+
+  // #Menu Button
+  label {
+    display: block;
+    position: fixed;
+    // Very high z-index, set as to not be overridden
+    z-index: 21;
+    cursor: pointer;
+    // TODO: Make the size rely on the navigation bar (+border-bottom) height variable
+    padding: 1.375em;
+    width: 1.75rem;
+  }
+
+  // #Menu Button Checked Input
+  input:checked ~ span {
+    background: variables.$tertiary-color;
+  }
+
+  // #Hamburger Lines
+  span,
+  span::before,
+  span::after {
+    position: absolute;
+    transition: all ease-in-out 200ms;
+    border-radius: 1rem;
+    background-color: variables.$secondary-color;
+    width: 1.75rem;
+    height: 0.275rem;
+    content: "";
+  }
+
+  span {
+    &::before {
+      bottom: 0.5rem;
+    }
+
+    // FIXME: Don't rely on transform: translateY() for centering
+    // Perfectly align the hamburger menu
+    transform: translateY(-0.125rem);
+
+    &::after {
+      top: 0.5rem;
+    }
+  }
+
+  // #Hamburger Lines Checked Input
+
+  input:checked ~ label span {
+    &::before,
+    &::after {
+      background-color: variables.$tertiary-color;
+    }
+
+    &::before {
+      bottom: 0;
+      transition: all ease-in-out 250ms;
+    }
+
+    background-color: transparent;
+
+    &::after {
+      top: 0;
+      transition: all ease-in-out 250ms;
+    }
+  }
+
+  // #Nav
+  nav {
+    position: fixed;
+    // Very high z-index, set as to not be overridden
+    z-index: 20;
+    transition: transform ease-in-out 250ms;
+    border-bottom: 0.25rem solid variables.$main-color;
+    box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
+    background-color: variables.$tertiary-color;
+    width: 100%;
+    height: 2.75rem;
+
+    // ##Nav Link
+    a {
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  // #Unordered List
+  ul {
+    position: fixed;
+    transition: transform ease-in-out 250ms;
+    background-color: variables.$secondary-color;
+    margin: 0;
+    padding: 0;
+    width: variables.$size;
+    max-width: variables.$max-size;
+    list-style: none;
+
+    // Scrolling Overflow
+    overflow-y: auto;
+
+    // Move Scrollbar To The Right Side
+    direction: rtl;
+
+    // ## Custom scrollbar
+    // Webkit
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      // Magic Number
+      // Equivalent to size of "scrollbar-width: thin;" in the Gecko engine
+      width: 0.375rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: variables.$main-color;
+    }
+
+    // Gecko
+    scrollbar-width: thin;
+    scrollbar-color: variables.$main-color transparent;
+
+    // IE
+    -ms-scrollbar-base-color: variables.$main-color;
+    -ms-scrollbar-arrow-color: variables.$main-color;
+    -ms-scrollbar-track-color: variables.$secondary-color;
+  }
+}

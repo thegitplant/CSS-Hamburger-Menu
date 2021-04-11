@@ -1,0 +1,57 @@
+@use "../abstracts/variables";
+
+// =================
+// Table Of Contents
+// =================
+//
+// .nav-menu
+//  '- #Nav Link
+//      '- ##Hover Line
+//      '- ##Focus
+//      '- ##Selection
+
+.nav-menu {
+  // #Nav Link
+  a {
+    display: block;
+    padding: 1em 0.5em;
+    text-align: center;
+    text-decoration: none;
+    color: variables.$main-color;
+    font-size: variables.$font-size;
+    font-weight: variables.$font-weight;
+
+    // ##Hover Line
+    &::after {
+      box-sizing: border-box;
+      display: block;
+      margin-top: variables.$font-size / 6;
+      width: 100%;
+      height: variables.$font-size / 8;
+      transform: scaleX(0);
+      background-color: variables.$main-color;
+      content: "";
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &:active::after {
+      transform: scaleX(1);
+      transition: transform ease-in-out 250ms;
+    }
+
+    // ##Focus
+    &:focus {
+      outline: dashed variables.$main-color variables.$font-size / 8;
+      outline-offset: -0.25rem; // For the browsers that support it
+      // TODO: Somehow use border or some sort of box shadow instead of outline while maintaining the
+      // same look for better compatibility (e.g. IE - outline-offset)
+    }
+
+    // ##Selection
+    &::selection {
+      background-color: variables.$main-color;
+      color: variables.$secondary-color;
+    }
+  }
+}

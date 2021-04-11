@@ -1,0 +1,27 @@
+@use "./top";
+
+// =================
+// Table Of Contents
+// =================
+
+// .nav-menu
+// '- #Menu button
+// '- #Hamburger Lines Checked Input
+
+.nav-menu {
+  // #Menu button
+  label {
+    right: 0;
+  }
+
+  // #Hamburger Lines Checked Input
+  input:checked ~ label span {
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}

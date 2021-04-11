@@ -1,0 +1,26 @@
+@use "../../abstracts/variables";
+
+// =================
+// Table Of Contents
+// =================
+
+// .nav-menu
+//  '- #Unordered List
+//      '- ##Last List Item
+
+.nav-menu {
+  position: relative;
+  height: 3rem;
+
+  // #Unordered List
+  ul {
+    transform: scaleX(0);
+    border-top: 3rem solid variables.$secondary-color;
+    height: 100vh;
+  }
+
+  // #Last List Item
+  li:last-of-type {
+    margin-bottom: 3rem;
+  }
+}

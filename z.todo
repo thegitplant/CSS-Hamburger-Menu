@@ -1,0 +1,22 @@
+Size:
+     [ ] Make the navigation bar height a sass variable (currently 2.5rem)
+     [ ] Make the navigation bar + border-bottom height a sass variable (currently 2.75rem)
+
+Responsive:
+     [ ] Add a `_reset-styles.scss` file - To unset all styles
+     [ ] Add a `_custom-desktop.scss` file that uses `_reset-styles.scss`
+     [ ] Add support for an anchor with a child image as logo (`_responsive-img.scss`)
+     [ ] If the desktop navigation is overflowing horizontally with links add a scrollbar
+
+Project:
+     [ ] Add a Sass version
+     [ ] Make compiled CSS more compact
+     [X] Order the SCSS properties using a CSS ordering methodology - Concentric-CSS
+     [X] Add a to-do file - `z.todo`
+     [X] Tag the releases
+
+`Advanced` branch:
+     [ ] Make a git branch and call it `Advanced`
+     [ ] Mirror the `main` branch into the `Advanced` branch
+     [ ] Add hamburger lines styles
+     [ ] Add hamburger lines animations

@@ -1,0 +1,56 @@
+@use "../../abstracts/variables";
+@use "../nav";
+
+// =================
+// Table Of Contents
+// =================
+
+// .nav-menu
+//  '- #Reveal Hamburger Menu
+//  '- #Hamburger Lines Checked Input
+//  '- #Nav
+//      '- ##Unordered List
+
+.nav-menu {
+  height: 3rem;
+  // #Reveal Hamburger Menu
+  input:checked ~ nav {
+    transform: scaleY(1);
+    transform-origin: 0 top;
+    transition: transform ease-in-out 250ms;
+  }
+
+  // Hamburger Lines Checked Input
+  // Form The 'X' To Symbolize A "Close Button"
+  input:checked ~ label span {
+    &::before {
+      bottom: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  // #Nav
+  nav {
+    position: fixed;
+    transition: all ease-in-out 250ms;
+  }
+  // ##Unordered List
+  ul {
+    position: fixed;
+    transform: scaleY(0);
+    transform-origin: 0 top;
+    transition: all 150ms ease-in-out;
+    margin: 0 auto;
+    border-top: 2.75rem variables.$secondary-color solid;
+    box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
+    background-color: variables.$secondary-color;
+    min-width: 100%;
+    height: calc(#{variables.$size} - 2.75rem);
+    direction: rtl;
+  }
+}

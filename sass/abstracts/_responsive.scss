@@ -1,0 +1,44 @@
+@use "./variables";
+
+// =================
+// Table Of Contents
+// =================
+// .nav-menu
+//  '- #Hamburger Button
+//  '- #Nav
+//  '- #Unordered List
+//      '- ##Nav Link
+
+@media screen and (min-width: variables.$break) {
+  .nav-menu {
+    // #Hamburger Button
+    label {
+      display: none;
+    }
+
+    // #Unordered List
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      box-shadow: none;
+      width: 100%;
+      max-width: 100%;
+      height: 2.75rem;
+      transform: scale(1, 1);
+      direction: ltr;
+
+      // ##Nav Link
+      a {
+        opacity: 1;
+        padding: 0.5em;
+        width: max-content;
+      }
+
+      li:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

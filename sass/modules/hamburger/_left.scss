@@ -1,0 +1,45 @@
+@use "../../abstracts/variables";
+@use "../nav";
+@use "./sides";
+
+// =================
+// Table Of Contents
+// =================
+
+// .nav-menu
+//  '- #Hamburger Lines
+//  '- #Hamburger Lines Checked Input
+//  '- #Unordered List
+
+
+.nav-menu {
+  // #Hamburger Lines
+  // Rotate Hamburger Lines For A Nicer Animation When Checked
+  span {
+    &::before {
+      transform: rotate(-180deg);
+    }
+
+    &::after {
+      transform: rotate(-180deg);
+    }
+  }
+
+  // #Hamburger Lines Checked Input
+  // Form The 'X' To Symbolize A "Close Button"
+  input:checked ~ label span {
+    &::before {
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  // #Unordered List
+  ul {
+    transform-origin: left;
+    box-shadow: 0.125rem 0 0.125rem variables.$tertiary-color;
+  }
+}

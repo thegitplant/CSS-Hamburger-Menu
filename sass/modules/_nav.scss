@@ -6,7 +6,7 @@
 //
 // - #Typography
 //
-// .nav-menu
+// Nav
 //  '- #Input
 //  '- #Checked Input
 //  '- #Menu Button
@@ -17,23 +17,20 @@
 //      '- ##Nav Link
 //  '- #Unordered List
 //      '- ## Custom Scrollbar
+//      '- ## Image
 
 // #Typography
 @use "../base/typography";
 
-.nav-menu {
+nav {
   // #Input
   input {
     display: none;
   }
 
   // #Checked Input
-  input:checked ~ nav ul {
+  input:checked ~ .nav-menu ul {
     transform: scaleX(1);
-
-    img {
-      display: none;
-    }
 
     a {
       opacity: 1;
@@ -106,14 +103,15 @@
     }
   }
 
-  // #Nav
-  nav {
+  // #Nav Menu
+  .nav-menu {
     position: fixed;
     // Very high z-index, set as to not be overridden
     z-index: 20;
     transition: transform ease-in-out 250ms;
     border-bottom: 0.25rem solid variables.$main-color;
-    box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
+    box-shadow: 0 0.025rem 0.125rem 0.125rem
+      transparentize($color: variables.$tertiary-color, $amount: 0.375);
     background-color: variables.$tertiary-color;
     width: 100%;
     height: 2.75rem;
@@ -163,5 +161,10 @@
     -ms-scrollbar-base-color: variables.$main-color;
     -ms-scrollbar-arrow-color: variables.$main-color;
     -ms-scrollbar-track-color: variables.$secondary-color;
+
+    // ##Image
+    img {
+      display: none;
+    }
   }
 }

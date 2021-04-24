@@ -5,16 +5,16 @@
 // Table Of Contents
 // =================
 
-// .nav-menu
+// Nav
 //  '- #Reveal Hamburger Menu
 //  '- #Hamburger Lines Checked Input
-//  '- #Nav
+//  '- #Nav Menu
 //      '- ##Unordered List
 
-.nav-menu {
+nav {
   height: 3rem;
   // #Reveal Hamburger Menu
-  input:checked ~ nav {
+  input:checked ~ .nav-menu {
     transform: scaleY(1);
     transform-origin: 0 top;
     transition: transform ease-in-out 250ms;
@@ -34,11 +34,12 @@
     }
   }
 
-  // #Nav
-  nav {
+  // #Nav Menu
+  .nav-menu {
     position: fixed;
     transition: all ease-in-out 250ms;
   }
+
   // ##Unordered List
   ul {
     position: fixed;
@@ -47,7 +48,7 @@
     transition: all 150ms ease-in-out;
     margin: 0 auto;
     border-top: 2.75rem variables.$secondary-color solid;
-    box-shadow: 0 0 0.125rem 0.125rem variables.$tertiary-color;
+    box-shadow: 0 0 0.125rem 0.125rem transparentize($color: variables.$tertiary-color, $amount: 0.375);
     background-color: variables.$secondary-color;
     min-width: 100%;
     height: calc(#{variables.$size} - 2.75rem);

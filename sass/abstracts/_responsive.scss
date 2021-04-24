@@ -3,19 +3,21 @@
 // =================
 // Table Of Contents
 // =================
+//
+// #Hamburger Button
+//
 // .nav-menu
 //  '- #Hamburger Button
-//  '- #Nav
 //  '- #Unordered List
 //      '- ##Nav Link
 
 @media screen and (min-width: variables.$break) {
-  .nav-menu {
-    // #Hamburger Button
-    label {
-      display: none;
-    }
+  // #Hamburger Button
+  nav label {
+    display: none;
+  }
 
+  .nav-menu {
     // #Unordered List
     ul {
       display: flex;

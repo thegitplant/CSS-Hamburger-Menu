@@ -6,13 +6,13 @@
 // Table Of Contents
 // =================
 
-// .nav-menu
+// Nav
 //  '- #Hamburger Lines
 //  '- #Hamburger Lines Checked Input
 //  '- #Unordered List
 
 
-.nav-menu {
+nav {
   // #Hamburger Lines
   // Rotate Hamburger Lines For A Nicer Animation When Checked
   span {
@@ -40,6 +40,6 @@
   // #Unordered List
   ul {
     transform-origin: left;
-    box-shadow: 0.125rem 0 0.125rem variables.$tertiary-color;
+    box-shadow: 0.125rem 0 0.125rem transparentize($color: variables.$tertiary-color, $amount: 0.375);
   }
 }

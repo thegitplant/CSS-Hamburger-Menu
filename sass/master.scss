@@ -27,7 +27,7 @@
 // #Navigation Styles
 
 // ##Left Style | Hamburger Menu Comes From Left
-// @use "./modules/hamburger/left";
+@use "./modules/hamburger/left";
 
 // ##Right Style | Hamburger Menu Comes From Right
 // @use "./modules/hamburger/right";
@@ -36,7 +36,7 @@
 // @use "./modules/hamburger/top";
 
 // ##Top Right Style | Same As Top Style But Moves The Hamburger Button To The Right
-@use "./modules/hamburger/top-right";
+// @use "./modules/hamburger/top-right";
 
 // #Hover Line Styles
 // Use just one!

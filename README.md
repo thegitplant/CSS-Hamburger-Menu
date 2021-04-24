@@ -1,9 +1,19 @@
 ## Screenshots
 
-<details>
-  <summary>Mobile Navigation</summary>
+Remember that these screenshots had a specific configuration. \
+Your setup may look different depending on your preferences.
 
-![Mobile Navigation](./screenshot/Mobile_nav.png)
+<details>
+  <summary>Mobile Navigation (Closed)</summary>
+
+![Mobile Navigation Closed](./screenshot/Mobile_nav.png)
+
+</details>
+
+<details>
+  <summary>Mobile Navigation (Open)</summary>
+
+![Mobile Navigation (Open)](./screenshot/Mobile-open_nav.png)
 
 </details>
 
@@ -13,6 +23,7 @@
 ![Desktop Navigation](./screenshot/Tablet_Nav.png)
 
 </details>
+
 
 ## Setup:
 

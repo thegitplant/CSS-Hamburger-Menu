@@ -52,7 +52,7 @@ Your setup may look different depending on your preferences.
 </nav>
 ```
 
-    You may add and delete as many links as you like
+    You may add and remove as many links as you like
 
 1. Compile the SCSS to CSS and link the compiled CSS to your webpages.
 
